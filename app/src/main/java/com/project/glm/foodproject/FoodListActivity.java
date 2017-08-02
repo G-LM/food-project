@@ -26,6 +26,7 @@ public class FoodListActivity extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Food item = (Food) listView.getItemAtPosition(position);
                 Intent intent = new Intent(getApplicationContext(), FoodDetailActivity.class);
+                intent.putExtra("FOOD", item);
                 startActivity(intent);
             }
         });
