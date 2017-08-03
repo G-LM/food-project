@@ -12,6 +12,9 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 
 /**
@@ -19,6 +22,13 @@ import java.net.URL;
  */
 
 public class Common {
+
+    static String doubleToPrice(double _dbl) {
+        Locale locale = new Locale("fr", "FR");
+        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
+        decimalFormat.applyPattern("##,###.00 €");
+        return decimalFormat.format(_dbl);
+    }
 
     static class ProcessRequest extends AsyncTask<Object, Void, String> {
 

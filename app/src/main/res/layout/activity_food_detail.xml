@@ -1,38 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Toto"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="10.00 €"
-        />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="200dp"
+        android:id="@+id/IV_detail_food_pic"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@mipmap/ic_launcher"
-        />
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_launcher" />
 
-    <Button
-        android:id="@+id/B_order"
+    <LinearLayout
+        android:id="@+id/LY_food_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Commander"
-        android:onClick="onOrderClicked"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        />
+        android:layout_below="@id/IV_detail_food_pic"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/TV_detail_food_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="5dp"
+            android:text="Food"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TV_detail_food_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="10,00 €"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/B_order"
+        android:layout_below="@id/LY_food_title"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/TV_detail_food_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Description"
+            android:textStyle="italic" />
+    </ScrollView>
+
+    <Button
+        android:id="@id/B_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center"
+        android:onClick="onOrderClicked"
+        android:text="Commander" />
+
+</RelativeLayout>
+
+
 
 

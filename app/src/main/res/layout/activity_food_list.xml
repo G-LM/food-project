@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.project.glm.foodproject.FoodListActivity">
-
-<ListView
-    android:id="@android:id/list"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    android:scrollbarAlwaysDrawVerticalTrack="true"
-    android:scrollbarStyle="outsideOverlay"
-    android:fadeScrollbars="false"
-    android:scrollbars="vertical"
+    android:orientation="vertical"
+    tools:context="com.project.glm.foodproject.FoodListActivity">
 
-    />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Menu"
+            android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

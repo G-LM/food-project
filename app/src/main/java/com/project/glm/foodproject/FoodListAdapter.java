@@ -9,11 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by glm on 02/08/2017.
@@ -56,16 +52,10 @@ public class FoodListAdapter extends ArrayAdapter<Food> {
         }
 
         holder.display_name.setText(m_foodList.get(_position).getId());
-        holder.display_price.setText(doubleToPrice(m_foodList.get(_position).getPrice()));
+        holder.display_price.setText(Common.doubleToPrice(m_foodList.get(_position).getPrice()));
         holder.display_picture.setImageResource(m_foodList.get(_position).getPicId());
 
         return _view;
     }
 
-    static String doubleToPrice(double _dbl) {
-        Locale locale = new Locale("fr", "FR");
-        DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(locale);
-        decimalFormat.applyPattern("##,###.00 €");
-        return decimalFormat.format(_dbl);
-    }
 }

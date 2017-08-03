@@ -1,6 +1,5 @@
 package com.project.glm.foodproject;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,9 +37,12 @@ public class FoodListActivity extends ListActivity {
 
     private ArrayList<Food> fillList() {
         ArrayList<Food> foodList = new ArrayList<>();
-        for(int i=0; i<100; ++i) {
-            foodList.add(new Food("Food", 10.00, R.mipmap.ic_launcher));
-            foodList.add(new Food("TRUC", 20.00, R.mipmap.ic_launcher));
+        for(int i=0; i<10; ++i) {
+            foodList.add(new Food("Tajine aubergine agneau", 20.00,
+                    R.drawable.tajine_aubergine_agneau, R.drawable.tajine_aubergine_agneau_mini, "Decription : Tajine aubergine agneau"));
+            foodList.add(new Food("Salade lentille grenade", 15.00,
+                    R.drawable.salade_lentille_grenade, R.drawable.salade_lentille_grenade_mini, "Descrption : Salade lentille grenade" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFelicitations ! Vous êtes a la fin de la description! "));
         }
         return foodList;
     }
