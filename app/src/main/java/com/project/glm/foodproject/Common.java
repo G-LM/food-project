@@ -1,5 +1,7 @@
 package com.project.glm.foodproject;
 
+import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 
 import org.json.JSONObject;
@@ -76,5 +78,14 @@ public class Common {
             e.printStackTrace();
         }
         return response;
+    }
+
+    public static boolean isLandscapeOrientation(Activity _activity) {
+        return _activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+    }
+
+    public static boolean isLargeScreenLayout(Activity _activity) {
+        return ((_activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+                || ((_activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
     }
 }
